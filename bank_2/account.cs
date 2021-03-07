@@ -69,36 +69,34 @@ namespace bank_2
                 TransactionIncrement();
 
             }
-        
-            public void Transfer(double amount, Account receiver)
+        }
+            public void Transfer(double amount, account receiver)
             {
                 if (amount > 0 && amount <= balance)
                 {
-                    alance -= amount;
+                    balance -= amount;
                     receiver.Deposit(amount);
                     TransactionIncrement();
 
                 }
-                
+            }
                 virtual public void ShowAccountInformation()
                 {
 
-            Console.WriteLine("__Account Information__\nAccount Type - {0}\nAccount Name - {1}\nAccount Number - {2}\nBalance - {3}\nAddress - {4}\nDOB - {5}", AccountType, AccountName, AccountNumber, Balance, Address, DateOfBirth);
+                 Console.WriteLine("__Account Information__\nAccount Type - {0}\nAccount Name - {1}\nAccount Number - {2}\nBalance - {3}\nAddress - {4}\nDOB - {5}", AccountType, AccountName, AccountNumber, Balance, Address, DateOfBirth);
                 }
 
 
-            }
-
-
-
-
-
-
-
-
-
-
-        }
-    }
-    
+    } 
 }
+
+
+
+
+
+
+
+
+
+
+        
