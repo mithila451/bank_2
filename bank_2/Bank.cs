@@ -43,7 +43,7 @@ namespace bank_2
             int flag = 0;
             for (int i = 0; myBank[i] != null; i++)
             {
-                if(myBank[i].AccountNumber == accountNumber)
+                if (myBank[i].AccountNumber == accountNumber)
                 {
                     while (myBank[i + 1] != null && i < myBank.Length)
                     {
@@ -86,7 +86,7 @@ namespace bank_2
                         case 2:
                             for (int i = 0; i < myBank.Length; i++)
                             {
-                                if (myBank[i].AccountNumber == fromAccountNumber)
+                                if (myBank[i].accountNumber == fromaccountNumber)
                                 {
                                     myBank[i].Withdraw(amount);
                                     break;
@@ -95,15 +95,69 @@ namespace bank_2
                             }
 
                             break;
+                        case 3:
+                            Console.WriteLine("Enter Your Receiver account Number :");
+                            int receiveraccountNumber = Convert.ToInt32(Console.ReadLine());
+                            int iReceiver = 0;
+                            for (int i = 0; i < myBank.Length; i++)
+                            {
+                                if (myBank[i].accountNumber == receiveraccountNumber)
+                                {
+                                    iReceiver = i;
+                                    break;
+                                }
+
+
+                            }
+
+                            for (int i = 0; i < myBank.Length; i++)
+                            {
+                                if (myBank[i].accountNumber == fromaccountNumber)
+                                {
+                                    myBank[i].Transfer(amount, myBank[iReceiver]);
+                                    break;
+                                }
 
 
 
+                            }
 
+                            break;
 
                     }
+                    
+                    
+                    
+                    
+                    default:
+                }        break;
+            
+
+            }
 
 
-                }
+            public void ShowAllTransactions(int accountNumber)
+            {
+                      for (int i = 0; i < myBank.Length; i++)
+                      {
+                          if (myBank[i].accountNumber == accountNumber)
+                          {
+                            Console.WriteLine("Total Transaction - {0} Current Balance - {1}", myBank[i].Transactions, myBank[i].Balance);
+                           break;
+                          }
+
+
+
+
+
+
+                      }
+
+
+
+
+
+
 
 
 
@@ -111,10 +165,23 @@ namespace bank_2
             }
 
 
+        public void ShowAllaccount()
+        {
+            Console.WriteLine("_All accounts_\n");
+            for (int i = 0; myBank[i] != null; i++)
+            {
 
-
-
+                myBank[i].ShowaccountInformation();
+                Console.WriteLine();
+            }
         }
+
+
+
+
+
+
+
 
     }
 }
