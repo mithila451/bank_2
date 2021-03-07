@@ -57,8 +57,53 @@ namespace bank_2
                     break;
 
                 }
+                if (flag == 0)
+                {
+                    Console.WriteLine("Sorry account Couldnt Be Deleted!");
+
+                }
+
+                public void Transaction(int choice, int fromaccountNumber, double amount)
+                {
+                    switch (choice)
+                    {
+                        case 1:
+                            for (int i = 0; i < myBank.Length; i++)
+                            {
+                                if (myBank[i].accountNumber == fromaccountNumber)
+                                {
+                                    myBank[i].Deposit(amount);
+                                    break;
+
+                                }
 
 
+
+
+
+                            }
+                            break;
+                        case 2:
+                            for (int i = 0; i < myBank.Length; i++)
+                            {
+                                if (myBank[i].AccountNumber == fromAccountNumber)
+                                {
+                                    myBank[i].Withdraw(amount);
+                                    break;
+                                }
+
+                            }
+
+                            break;
+
+
+
+
+
+                    }
+
+
+                }
 
 
 
