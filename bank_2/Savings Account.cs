@@ -20,6 +20,11 @@ namespace bank_2
                 Balance -= amount;
                 TransactionIncrement();
             }
+            else
+            {
+                Console.WriteLine("Sorry The Amount Couldnt Be Withdrawn..");
+
+            }
 
 
 
