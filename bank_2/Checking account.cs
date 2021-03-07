@@ -15,7 +15,12 @@ namespace bank_2
         }
         public override void Withdraw(double amount)
         {
+            if (amount > 0 && amount <= Balance)
+            {
+                Balance -= amount;
+                TransactionIncrement();
 
+            }
 
         }
     }
